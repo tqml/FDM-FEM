@@ -1,7 +1,0 @@
-\select@language {ngerman}
-\contentsline {figure}{\numberline {1}{\ignorespaces Ergebnisse f\"ur 3 St\"utzstellen im Intervall $r=[1,5]$\relax }}{6}
-\contentsline {figure}{\numberline {2}{\ignorespaces Hutfunktion}}{10}
-\contentsline {figure}{\numberline {3}{\ignorespaces \"Uberlagerte Hutfunktionen\relax }}{11}
-\contentsline {figure}{\numberline {4}{\ignorespaces Ergebnisse der FEM mit dem Newmark-Zeitschrittverfahren\relax }}{14}
-\contentsline {figure}{\numberline {5}{\ignorespaces Simulation eines Plattenkondesators mit Netgen\relax }}{16}
-\contentsline {figure}{\numberline {6}{\ignorespaces Untersuchen des Einflusses des fernen Randes\relax }}{17}

@@ -2,3 +2,10 @@ Abgabe/
 Abgabe.zip
 Unterlagen/
 Angabe/
+*.glo
+*.idx
+*.log
+*.lof
+*.lot
+*.aux
+*.toc
