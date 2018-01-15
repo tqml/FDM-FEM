@@ -1,0 +1,100 @@
+% !TeX encoding = ISO-8859-1
+% !TeX spellcheck = de_DE
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{mathtools}
+
+
+\definecolor{Brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.95}
+\definecolor{mediumgray}{gray}{0.65}
+\definecolor{darkgray}{gray}{0.3}
+\definecolor{MatlabKeyWordBlue}{cmyk}{0.92,0.92,0,0}
+\definecolor{MatlabKeyWordBlue}{rgb}{0.13,0.13,1}
+\definecolor{MatlabCommentGreen}{rgb}{0.1529,0.6029,0.1529}
+\definecolor{MatlabStringPurple}{rgb}{0.62,0.12,0.94}
+%\definecolor{MatlabCommentGreen}{cmyk}{0.75,0,0.75,0.45}
+\definecolor{cadmiumorange}{rgb}{0.93, 0.53, 0.18}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.85,0,0}
+\definecolor{pycharmString}{rgb}{0.64,0.760,0.38}
+
+
+
+
+
+\lstdefinestyle{myMatlabStyle}{
+	language=matlab,                        % Code langugage
+	basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+	keywordstyle={\color{bluekeywords}\bfseries}, % Keywords font ('*' = uppercase)
+	commentstyle={\color{greencomments}\bfseries},% Comments font
+	stringstyle=\color{MatlabStringPurple},  % String font
+	numbers=left,                           % Line nums position
+	numberstyle=\tiny,                      % Line-numbers fonts
+	stepnumber=1,                           % Step between two line-numbers
+	numbersep=5pt,                          % How far are line-numbers from code
+	backgroundcolor=\color{lightlightgray}, % Choose background color
+	frame=none,                             % A frame around the code
+	tabsize=2,                              % Default tab size
+	captionpos=b,                           % Caption-position = bottom
+	breaklines=true,                        % Automatic line breaking?
+	breakatwhitespace=false,                % Automatic breaks only at whitespace?
+	showspaces=false,                       % Dont make spaces visible
+	showstringspaces=false,
+	showtabs=false,                         % Dont make tabls visible
+	morekeywords={try, catch},  			% CUDA specific keywords
+}
+
+\title{
+	{\huge TU WIEN} \\
+	{\Large \textbf{Einführung in die Methode der finiten Elemente}} \\
+	{\large Mathematik Fachvertiefung}}
+%\author{Benjamin Kulnik}
+\author{
+	\\
+	von \\
+	\\
+	\textit{Benjamin Kulnik} \\
+	1425900 \\
+	benjamin.kulnik@student.tuwien.ac.at \\
+}
+
+
+
+
+
+
+\begin{document}
+	\begin{titlepage}
+		\centering
+		\maketitle
+		%{benjamin.kulnik@student.tuwien.ac.at\par}
+		%{1425900\par}
+		\vfill
+		
+	\end{titlepage}
+	\tableofcontents
+	
+	\include{FDM}
+	\include{FEM}
+	\include{netgen}
+	
+	\appendix
+	\listoffigures
+	\listoftables
+	
+
+\end{document}

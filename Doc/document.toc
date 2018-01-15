@@ -1,0 +1,17 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Finite Differenzen Methode}{2}
+\contentsline {subsection}{\numberline {1.1}Analytische L\"osung}{2}
+\contentsline {subsection}{\numberline {1.2}Numerische L\"osung}{4}
+\contentsline {subsection}{\numberline {1.3}Implementierung in Matlab}{5}
+\contentsline {subsection}{\numberline {1.4}Ergebnisse}{6}
+\contentsline {section}{\numberline {2}Finite Elemente Methode}{7}
+\contentsline {subsection}{\numberline {2.1}Angabe}{7}
+\contentsline {subsection}{\numberline {2.2}Herleiten der schwachen Formulierung}{7}
+\contentsline {subsection}{\numberline {2.3}Festlegen des Intervalls}{8}
+\contentsline {subsection}{\numberline {2.4}Ansatzfunktion}{8}
+\contentsline {subsection}{\numberline {2.5}Newmark Zeitschrittverfahren}{10}
+\contentsline {subsection}{\numberline {2.6}Implementierung in Matlab}{11}
+\contentsline {subsection}{\numberline {2.7}Ergebnis}{13}
+\contentsline {section}{\numberline {3}Simulation mit Netgen und Matlab}{14}
+\contentsline {subsection}{\numberline {3.1}Plattenkondensator Simulation}{14}
+\contentsline {subsection}{\numberline {3.2}Einfluss des fernen Randes}{14}
