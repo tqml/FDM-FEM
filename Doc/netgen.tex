@@ -1,7 +1,7 @@
 % !TeX spellcheck = de_DE
 \section{Simulation mit Netgen und Matlab}
 
-Alle Unterlagen für den 3ten Übungsteil finden Sie im TUWEL-Kurs. Installieren Sie Netgen 6.1. Das Simulationsbeispiel finden Sie in Simulations.zip im Verzeichnis Electrostatics.
+Alle Unterlagen fÃ¼r den 3ten Ãœbungsteil finden Sie im TUWEL-Kurs. Installieren Sie Netgen 6.1. Das Simulationsbeispiel finden Sie in Simulations.zip im Verzeichnis Electrostatics.
 Falls Sie nach ernsthaften Anstrengungen immer noch ein Problem mit der Installation oder den Simulationen haben, dann schreiben Sie einfach ein Email an karl.hollaus@tuwien.ac.at und schildern kurz das Problem.
 \\
 \\
@@ -12,9 +12,9 @@ Falls Sie nach ernsthaften Anstrengungen immer noch ein Problem mit der Installa
 	\begin{enumerate}
 		
 
-	\item Bestimmen Sie die Kapazität des Plattenkondensators mit Hilfe einer FE-Simulation und vergleichen Sie diese mit der bekannten Näherungsformel. Die Plattenbreite ist $b = 6m$, der Plattenabstand ist $d = 2m$ und die Spannung an den beiden Platten beträgt $U=2V$.
-	\item Untersuchen Sie den relativen Fehler in Abhängigkeit vom Dielektrikum zwischen den Kondensatorplatten. Stellen Sie den relativen Fehler in Abhängigkeit von $\epsilon_r$ dar.
-	\item Untersuchen Sie den Einfluss des fernen Randes auf die Lösung indem Sie die Geometrie des Problemgebietes vergrößern bzw. verkleinern. Dokumentieren Sie Ihre Erkenntnisse.
+	\item Bestimmen Sie die KapazitÃ¤t des Plattenkondensators mit Hilfe einer FE-Simulation und vergleichen Sie diese mit der bekannten NÃ¤herungsformel. Die Plattenbreite ist $b = 6m$, der Plattenabstand ist $d = 2m$ und die Spannung an den beiden Platten betrÃ¤gt $U=2V$.
+	\item Untersuchen Sie den relativen Fehler in AbhÃ¤ngigkeit vom Dielektrikum zwischen den Kondensatorplatten. Stellen Sie den relativen Fehler in AbhÃ¤ngigkeit von $\epsilon_r$ dar.
+	\item Untersuchen Sie den Einfluss des fernen Randes auf die LÃ¶sung indem Sie die Geometrie des Problemgebietes vergrÃ¶ÃŸern bzw. verkleinern. Dokumentieren Sie Ihre Erkenntnisse.
 		\end{enumerate}
 \end{enumerate}
 
@@ -28,12 +28,12 @@ Falls Sie nach ernsthaften Anstrengungen immer noch ein Problem mit der Installa
 
 \subsection{Einfluss des fernen Randes}
 
-Die Größe des berechneten Gebiets, und damit die "Nähe" der Randbedingungen zueinander haben einen großen Einfluss auf das sich um den Kondensator ergebende Streufeld. Es wurde aus Symmetrie-Gründen nur der linke, obere Teil eines Kondensators in 2D berechnet.
-Für die Berechnung in Matlab wurden folgende Werte verwendet: 
+Die GrÃ¶ÃŸe des berechneten Gebiets, und damit die "NÃ¤he" der Randbedingungen zueinander haben einen groÃŸen Einfluss auf das sich um den Kondensator ergebende Streufeld. Es wurde aus Symmetrie-GrÃ¼nden nur der linke, obere Teil eines Kondensators in 2D berechnet.
+FÃ¼r die Berechnung in Matlab wurden folgende Werte verwendet: 
 \begin{itemize}
 	\item $1m = 0.1 \text{Skaleneinheiten}$
 	\item PDGL: $ - \nabla \cdot c \nabla u = 0$ wobei $c=1$ ist.
-	\item Dirichletsche Randbedingungen an den Kondenstorflächen, an der horizontalen Symmetrie-Achse, sowie am fernen Rand (rechts und oben).
+	\item Dirichletsche Randbedingungen an den KondenstorflÃ¤chen, an der horizontalen Symmetrie-Achse, sowie am fernen Rand (rechts und oben).
 	\item Neumansche Randbedingung an der vertikalen Symmetrie-Achse
 \end{itemize}
 \textit{Info:} Aufgrund anhaltender Installatiosprobleme mit Python unter OS X wurden alle Simulationen mit dem \textit{pdetool} von Matlab gemacht. 
@@ -56,7 +56,7 @@ Für die Berechnung in Matlab wurden folgende Werte verwendet:
 \begin{subfigure}{0.45\textwidth}
 	\centering
 	\includegraphics[width=\linewidth]{../Netgen/pdetool/pde-not-so-very-far}
-	\caption{Großes Gebiet 10 x 10}
+	\caption{GroÃŸes Gebiet 10 x 10}
 	\label{fig:pde-far}
 \end{subfigure} &
 \begin{subfigure}{0.45\textwidth}

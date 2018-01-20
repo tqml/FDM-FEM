@@ -1,6 +1,6 @@
 % !TeX spellcheck = de_DE
 \section{Finite Differenzen Methode}
-	Als Beispiel sei das elektrische Skalarpotential $V$ eines Zylinderkondensators zu bestimmen, also das Lösen der Differentialgleichung:
+	Als Beispiel sei das elektrische Skalarpotential $V$ eines Zylinderkondensators zu bestimmen, also das LÃ¶sen der Differentialgleichung:
 	\begin{equation}
 	-\frac{1}{r} \frac{\partial}{\partial r} ( r \frac{\partial }{\partial r} u(r)) = 0
 	\end{equation}
@@ -9,7 +9,7 @@
 		\vec \nabla \cdot \epsilon_0 \vec \nabla V = 0
 		\label{e-potential}
 	\end{equation}
-	Aufgrund der Symmetrie - es wird passenderweise ein Zylinderkoordinatensystem gewählt - kann das Problem eindimensional betrachtet werden, also:
+	Aufgrund der Symmetrie - es wird passenderweise ein Zylinderkoordinatensystem gewÃ¤hlt - kann das Problem eindimensional betrachtet werden, also:
 	\begin{equation}
 	V(r,\phi, z) = V(r)
 	\end{equation}
@@ -18,109 +18,69 @@
 	
 	{\Large Aufgaben \par}
 	\begin{enumerate}
-		\item Bestimmen Sie die analytische Lösung $u(r)$.
-		\item Bestimmen Sie eine numerische Lösung mittels Methode der finiten Differenzen indem Sie das Intervall (1,5) gleichmäßig in 4 Teilintervalle teilen und den Differentialoperator diskretisieren.
-		\item  Vergleichen Sie die analytische Lösung mit der numerischen Lösung. Wie groß ist der relative Fehler in \% in den Knotenpunkten?
+		\item Bestimmen Sie die analytische LÃ¶sung $u(r)$.
+		\item Bestimmen Sie eine numerische LÃ¶sung mittels Methode der finiten Differenzen indem Sie das Intervall (1,5) gleichmÃ¤ÃŸig in 4 Teilintervalle teilen und den Differentialoperator diskretisieren.
+		\item  Vergleichen Sie die analytische LÃ¶sung mit der numerischen LÃ¶sung. Wie groÃŸ ist der relative Fehler in \% in den Knotenpunkten?
 	\end{enumerate}
 	
 	
-	\subsection{Analytische Lösung}
-
-
-	Die Differentialgleichung kann analytisch gelöst werden. Hierzu wird zuerst das erste Differenzial aufgelöst und die Gleichung auf folgende Form gebracht:
+	\subsection{Analytische LÃ¶sung}
+	Die Differentialgleichung kann analytisch gelÃ¶st werden. Hierzu wird zuerst das erste Differenzial aufgelÃ¶st und die Gleichung auf folgende Form gebracht:
 	\begin{equation}
 	\frac{1}{r} \frac{\partial }{\partial r} u(r) +  \frac{\partial^2}{\partial r^2} u(r) = 0
 	\end{equation}
-	
+	umformen und integrieren:
 	\begin{eqnarray}
 		-\frac{1}{r} \frac{\partial}{\partial r} ( r \frac{\partial }{\partial r} u(r)) = 0 \\
 		 \frac{\partial}{\partial r} ( r \frac{\partial }{\partial r} u(r)) = 0 \\
 		  r \frac{\partial }{\partial r} u(r) = C_1 \\
 		  \frac{\partial }{\partial r} u(r) = \frac{C_1}{r} \\
-		  u(r) = C_1 \log{r} + C_2
 	\end{eqnarray}
 	
-%	Wir wissen, wie die Lösung ungefähr auszusehen hat, nämlich in etwa die Form $u=C r^\lambda$ haben wird. Wir können also also diesen allgemeinen Ansatz wählen und in die Gleichung einsetzen (dabei wurden die konstanten Faktoren gleich gekürzt).
-%	Das führt dann auf:
+%	Wir wissen, wie die LÃ¶sung ungefÃ¤hr auszusehen hat, nÃ¤mlich in etwa die Form $u=C r^\lambda$ haben wird. Wir kÃ¶nnen also also diesen allgemeinen Ansatz wÃ¤hlen und in die Gleichung einsetzen (dabei wurden die konstanten Faktoren gleich gekÃ¼rzt).
+%	Das fÃ¼hrt dann auf:
 %	\begin{equation}
 %	\lambda \frac{1}{r} r^{\lambda-1} + \lambda^2 r^{\lambda -2} = 0
 %	\end{equation}
-%	Wie leicht zu erkennen ist, können auch die $r$'s gekürzt werden und anschließend $\lambda$ bestimmt werden. Mit
+%	Wie leicht zu erkennen ist, kÃ¶nnen auch die $r$'s gekÃ¼rzt werden und anschlieÃŸend $\lambda$ bestimmt werden. Mit
 %	\[
 %	\lambda_1 = 0 , \quad \lambda_2 = -1
 %	\]	
-%	erhalten wir nun als allgemeine Lösung unserer homogenen Differentialgleichung
+%	erhalten wir nun als allgemeine LÃ¶sung unserer homogenen Differentialgleichung
 %	\begin{equation}
 %	u(r) = C_1 r^{\lambda_1} + C_2 r^{\lambda_2} = C_1 + C_2 \frac{1}{r}
 %	\end{equation}
-%	mit noch zu bestimmenden Konstanten $C_1$ und $C_2$. Diese werden so gewählt, dass die Lösung unsere Randbedingen erfüllt. Für $u(1) = 0$ ergibt sich:
+%	mit noch zu bestimmenden Konstanten $C_1$ und $C_2$. Diese werden so gewÃ¤hlt, dass die LÃ¶sung unsere Randbedingungen erfÃ¼llt. FÃ¼r $u(1) = 0$ ergibt sich:
 %	\begin{equation}
 %	u(1)=C_1 + C_2 = 0 \quad \Rightarrow \quad C_1 = - C_2
 %	\end{equation}
-%	Und für die zweite Randbedingung ergibt sich (für $C_2$ wurde gleich $-C_1$ eingesetzt):
+%	Und fÃ¼r die zweite Randbedingung ergibt sich (fÃ¼r $C_2$ wurde gleich $-C_1$ eingesetzt):
 %	\begin{equation}
 %	u(5)=C_1 - C_1 \frac{1}{5} = 100 \quad \Rightarrow \quad C_1 = -125
 %	\end{equation}
 	
-	Zum Lösen wird zuerst $\frac{\partial u}{\partial r} = v(r)$ substituiert. Damit erhält man:
-	\begin{equation}
-	\frac{1}{r} v (r) +  \frac{\partial}{\partial r} v(r) = 0
-	\end{equation}
-	Nun bringt man $\frac{1}{r} v (r)$ auf die andere Seite und dividiert durch $v(r)$. Anschließend wird über beide Seiten nach $r$ integriert
-	\begin{equation}
-	\int \frac{\frac{\partial}{\partial r} v(r)}{v (r)} dr = - \int \frac{1}{r} dr
-	\end{equation}
-	Auflösen des Integrals bringt
-	\begin{equation}
-	\ln v = - \ln r + C_1 = \ln \frac{1}{r} + C_1
-	\end{equation}
-	Rückeinsetzen für $v(r) = \frac{\partial u}{\partial r}$ und vereinfachen der Konstante ergibt:
-	\begin{equation}
-	\frac{\partial u}{\partial r} = \frac{e^{C_1}}{r}  = \frac{C_1}{r} 
-	\end{equation}
-	Nochmaliges integrieren nach $r$ bringt uns schließlich auf
+	Nochmaliges integrieren nach $r$ bringt uns schlieÃŸlich auf
 	\begin{equation}
 	u(r)= 	\int \frac{\partial u}{\partial r} dr = C_1 \ln r + C_2
 	\end{equation}
-	mit noch zu bestimmenden Konstanten $C_1$ und $C_2$. Diese werden so gewählt, dass die Lösung unsere Randbedingen erfüllt. Für $u(1) = 0$ ergibt sich:
+	mit noch zu bestimmenden Konstanten $C_1$ und $C_2$. Diese werden so gewÃ¤hlt, dass die LÃ¶sung unsere Randbedingungen erfÃ¼llt. FÃ¼r $u(1) = 0$ ergibt sich:
 	\begin{equation}
 	u(1)=C_1 \ln(1) + C_2 =  0 \quad \Rightarrow \quad C_2 = 0
 	\end{equation}
-	Und für die zweite Randbedingung ergibt sich:
+	Und fÃ¼r die zweite Randbedingung ergibt sich:
 	\begin{equation}
 	u(5)=C_1 \ln(5)  = 100 \quad \Rightarrow \quad C_1 =\frac{100}{\ln 5} \approx 62.13349...
 	\end{equation}
 	\\
 	
-	Das Problem kann alternativ auch mithilfe des Satzes des elektrischen Hüllenflusses gelöst werden, läuft mathematisch aber gleich ab. Der Satz vom elektrischen Hüllenfluss lautet:
-	\begin{equation}
-		Q(\mathscr{V}) = \Psi(\mathscr{\partial V})
-	\end{equation}
-	Daraus lässt sich, aufgrund der Symmetrie, die längenbezogene Flussdichte $\vec{D'}$ ableiten.
-	\begin{equation}
-		\vec{D'} = \frac{Q}{A'} = \frac{Q}{2 \pi r}
-	\end{equation}
-	Mit der Materialbeziehung $\vec{D}' = \epsilon_0 \vec{E}'$ ergibt sich die elektrische Spannung als Summe der elektrischen Feldstärke entlang einer Kurve $\mathscr{C}$.
-	\begin{equation}
-		U = \int_{\mathscr{C}} \vec{e_r} \cdot \vec{E}(r) dr = \int_{r_1}^{r_2} \frac{Q}{2 \pi \epsilon_0 r} dr = \frac{Q}{2 \pi \epsilon_0} \ln{(\frac{r_2}{r_1})}
-	\end{equation}
-	Die Verknüpfung mit dem elektrischen Skalarpotential erforlgt mit Hilfe des Satzes vom verschwinden der elektrischen Umlaufspannung. Dieser gilt, wenn die keine sich schnell ändernden magnetischen Felder vorhanden sind und dem entsprechend $\vec{\nabla} \times \vec{E} = \vec{0}$ gilt und erlaubt uns die elektrische Spannung mit dem Skalarpotential als Differenz zwischen zwei Punkten zu verknüpfen.
-	Mit der  Festlegung $V(r=1) = 0$ als Potentialreferenzpunkt und
-	\begin{equation}
-	U( \mathscr{C} ) = V(\mathscr{P}_2) - V(\mathscr{P}_1)
-	\end{equation}
-	kann die noch zu bestimmende Konstante $Q$ mit 
-	\begin{equation}
-	Q= 3,435 \cdot 10^{-9} As
-	\end{equation}
-	berechnet werden.
+
 	
-	\subsection{Numerische Lösung}
-	Für die nummerische Berechnung wurde das Intervall in 4 Teilintervalle aufgeteilt und jeweils das Potential an den Stützstellen $r=\{1,2,3,4,5\}$ berechnet.	Die Gleichung \ref{e-potential} ist ausgeschrieben und in Zylinderkoordinaten:
+	\subsection{Numerische LÃ¶sung}
+	FÃ¼r die nummerische Berechnung wurde das Intervall in 4 Teilintervalle aufgeteilt und jeweils das Potential an den StÃ¼tzstellen $r=\{1,2,3,4,5\}$ berechnet.	Die Gleichung \ref{e-potential} ist ausgeschrieben und in Zylinderkoordinaten:
 	\begin{equation}
 	-\frac{1}{r} \frac{\partial}{\partial r} ( r \frac{\partial }{\partial r} u(r)) = 0
 	\end{equation}
-	Durch Anwenden der Produktregel lässt sich das Gleichgungssystem auf 
+	Durch Anwenden der Produktregel lÃ¤sst sich das Gleichgungssystem auf 
 	\begin{equation}
 	\frac{1}{r} \frac{\partial}{\partial r} ( r \frac{\partial }{\partial r} u(r)) = \frac{1}{r} \frac{\partial }{\partial r} u(r) +  \frac{\partial^2}{\partial r^2} u(r) = 0
 	\end{equation}
@@ -132,21 +92,21 @@
 	u_4
 	\end{bmatrix}
 	\end{equation}
-	Das Differential wird numerisch mit dem zentralen Differenzen Quotient angenähert:
+	Das Differential wird numerisch mit dem zentralen Differenzen Quotient angenÃ¤hert:
 	\begin{equation}
 	\frac{\partial u(r)}{\partial r} \approx \frac{u(r+h)-u(r-h)}{2 h}
 	\end{equation}
-	und entsprechend für die zweite Ableitung wurde
+	und entsprechend fÃ¼r die zweite Ableitung wurde
 	\begin{equation}
 		\frac{\partial^2 u(r)}{\partial r^2} \approx \frac{u(r+h)-2u(r)+u(r-h)}{h^2}
 	\end{equation}
-	gewählt. Die Herleitung erfolgt über die Taylorreihen-Entwicklung.
+	gewÃ¤hlt. Die Herleitung erfolgt Ã¼ber die Taylorreihen-Entwicklung.
 	
-	Wir konstruieren unser lineares Gleichungssystem folgendermaßen:
+	Wir konstruieren unser lineares Gleichungssystem folgendermaÃŸen:
 	\begin{equation}
 	\frac{1}{2rh} \mathbf{A} \mathbf{u} + \frac{1}{h^2}\mathbf{B}  \mathbf{u} = \mathbf{f}
 	\end{equation}
-	wobei die Matrizen $\mathbf{A}$ und $\mathbf{B}$ die Koeffizienten für die Differnezenquotienten enthalten. Der Vektor $\mathbf{f}$ enthält die rechte Seite der Differenzialgleichung (die hier allerdings immer 0 ist) und außerdem die entsprechenden Randbedingungen die zum Lösen erforderlich sind.
+	wobei die Matrizen $\mathbf{A}$ und $\mathbf{B}$ die Koeffizienten fÃ¼r die Differnezenquotienten enthalten. Der Vektor $\mathbf{f}$ enthÃ¤lt die rechte Seite der Differenzialgleichung (die hier allerdings immer 0 ist) und auÃŸerdem die entsprechenden Randbedingungen die zum LÃ¶sen erforderlich sind.
 	\begin{equation}
 	\mathbf{f} = \begin{bmatrix}
 	\frac{1}{rh} u_1  - \frac{1}{h^2} u_1 \\
@@ -154,7 +114,7 @@
 	-\frac{1}{2rh} u_5  - \frac{1}{h^2} u_5 
 	\end{bmatrix}
 	\end{equation}
-	Ausgeschrieben erhält man mit $h=1$ und $r=\{2,3,4\}$:
+	Ausgeschrieben erhÃ¤lt man mit $h=1$ und $r=\{2,3,4\}$:
 	\begin{equation}
 	\frac{1}{2}
 	\begin{bmatrix}
@@ -180,15 +140,15 @@
 	-\frac{1}{8} u_5  -  u_5 
 	\end{bmatrix}
 	\end{equation}
-	Die Matrizen können leicht zusammengefasst werden und anschließend gelöst werden.
+	Die Matrizen kÃ¶nnen leicht zusammengefasst werden und anschlieÃŸend gelÃ¶st werden.
 
 
 	\subsection{Implementierung in Matlab}
-	\lstinputlisting[language=matlab,style=myMatlabStyle,caption={Implementierung der FDM für die Berechnung des Potenzials in einem Zylinderkondensators. Eine Anpassung der Anzahl der Stützstellen ist möglich über die Variable $N$}]{../Matlab/FDM.m}
+	\lstinputlisting[language=matlab,style=myMatlabStyle,caption={Implementierung der FDM fÃ¼r die Berechnung des Potenzials in einem Zylinderkondensators. Eine Anpassung der Anzahl der StÃ¼tzstellen ist mÃ¶glich Ã¼ber die Variable $N$}]{../Matlab/FDM.m}
 	
 	\subsection{Ergebnisse}
 	
-	Die Methode der finiten Differenzen erlaubt eine zuverlässige Berechnung einer einfachen Differentialgleichung. Der relative Fehler ist selbst bei wenigen Stützstellen sehr gering.
+	Die Methode der finiten Differenzen erlaubt eine zuverlÃ¤ssige Berechnung einer einfachen Differentialgleichung. Der relative Fehler ist selbst bei wenigen StÃ¼tzstellen sehr gering.
 		
 	\begin{figure}[!h]
 		\centering
@@ -207,12 +167,12 @@
 		\end{subfigure}
 		
 	\end{tabular}
-	\caption{Ergebnisse für 3 Stützstellen im Intervall $r=[1,5]$}
+	\caption{Ergebnisse fÃ¼r 3 StÃ¼tzstellen im Intervall $r=[1,5]$}
 	\end{figure}
 
 	\begin{table}[!h]
 	\centering
-	\caption{Ergebnisse der FDM für $N=3$}
+	\caption{Ergebnisse der FDM fÃ¼r $N=3$}
 	\begin{tabular}{|c|c|c|c|}
 		\hline 
 		&  Analytisch & Numerisch & Relativer Fehler [\%] \\ 

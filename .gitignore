@@ -10,3 +10,4 @@ Doc/.texpadtmp/
 *.lot
 *.aux
 *.toc
+*-encoding-backup-*

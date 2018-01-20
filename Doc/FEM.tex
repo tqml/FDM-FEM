@@ -16,15 +16,15 @@
 	u(x,0) &= w(x) = e^{-k(2x-a-b)^2} \\
 	\frac{\partial}{\partial t} u(x,0) &= 0
 	\end{align}
-	soll das Newmarksche Zeitschrittverfahren durchgeführt werden.
+	soll das Newmarksche Zeitschrittverfahren durchgefÃ¼hrt werden.
 	\\
 	
 	{\Large Aufgaben \par}
 	\begin{enumerate}
-		\item Leiten Sie dazu die schwache Formulierung für die Abhängigkeit vom Ort her.
-		\item Nehmen Sie eine geeignete Länge des Intervalls $[a, b]$ an und unterteilen Sie es gleichmäßig in $n$ finite Elemente der Länge $h$.
-		\item Verwenden Sie Hutfunktionen als Basisfunktionen. Berücksichtigen Sie die Randbedingungen und erstellen Sie die Steifigkeitsmarix $\mathbf{S}_h$ und die Massenmatrix $\mathbf{M}_h$.
-		\item Lösen Sie das gewöhnliche Differentialgleichungssystem
+		\item Leiten Sie dazu die schwache Formulierung fÃ¼r die AbhÃ¤ngigkeit vom Ort her.
+		\item Nehmen Sie eine geeignete LÃ¤nge des Intervalls $[a, b]$ an und unterteilen Sie es gleichmÃ¤ÃŸig in $n$ finite Elemente der LÃ¤nge $h$.
+		\item Verwenden Sie Hutfunktionen als Basisfunktionen. BerÃ¼cksichtigen Sie die Randbedingungen und erstellen Sie die Steifigkeitsmarix $\mathbf{S}_h$ und die Massenmatrix $\mathbf{M}_h$.
+		\item LÃ¶sen Sie das gewÃ¶hnliche Differentialgleichungssystem
 	\[
 	\mathbf{S}_h \mathbf{u}_h  + \mathbf{M}_h \frac{\partial ^2}{\partial t^2} \mathbf{u}_h = \mathbf{0}
 	\]
@@ -39,13 +39,13 @@
 	\begin{equation}
 		\mathbf{A}\mathbf{u}=\mathbf{f}
 	\end{equation}
-	anschreiben lassen. Dabei ist $\mathbf{u}$ die gesuchte Funktion. Alle Faktoren und Differentialoperatoren werden durch $\mathbf{A}$ ausgedrückt. 
+	anschreiben lassen. Dabei ist $\mathbf{u}$ die gesuchte Funktion. Alle Faktoren und Differentialoperatoren werden durch $\mathbf{A}$ ausgedrÃ¼ckt. 
 	Die Idee ist nun u durch eine Ansatzfunktion $u_h$ zu approximieren.
-	Diese Ansatzfunktion soll in etwa die Gestalt einer Summe von (Laplace'schen) Ansatzfunktion multipliziert mit einem Trägerfunktion $p_i(x)$ sein. Diese Trägerfunktion soll im gesamten Gebiet mit Ausnahme eines kleinen Bereichs (eines \textit{Trägers}) verschwinden, also konstant 0 sein. Dadurch teilt man 
+	Diese Ansatzfunktion soll in etwa die Gestalt einer Summe von (Laplace'schen) Ansatzfunktion multipliziert mit einem TrÃ¤gerfunktion $p_i(x)$ sein. Diese TrÃ¤gerfunktion soll im gesamten Gebiet mit Ausnahme eines kleinen Bereichs (eines \textit{TrÃ¤gers}) verschwinden, also konstant 0 sein. Dadurch teilt man 
 	\begin{equation}
 		u_h = \sum_{i=0}^N u_i p_i(x)
 	\end{equation}
-	Diese Ansatzfunktion verändert unsere Funktion $u$, deshalb wird sie im Allgemeinen die Gleichung \textbf{nicht} erfüllen. Der linke Teil der Gleichung minus dem rechten Teil wird nicht exakt 0 sondern ein gewissen Wert $r$ ergeben. Dieser Fehler $r(x)$ wird \textit{Residuum} gennant.
+	Diese Ansatzfunktion verÃ¤ndert unsere Funktion $u$, deshalb wird sie im Allgemeinen die Gleichung \textbf{nicht} erfÃ¼llen. Der linke Teil der Gleichung minus dem rechten Teil wird nicht exakt 0 sondern ein gewissen Wert $r$ ergeben. Dieser Fehler $r(x)$ wird \textit{Residuum} gennant.
 	\begin{equation}
 	\mathbf{r} =\mathbf{f}-\mathbf{A}\mathbf{u}_h \neq 0 \tag{allgemein}
 	\end{equation}
@@ -53,44 +53,44 @@
 	\begin{equation}
 		r(x) =\frac{\partial^2 u_h(x,t)}{\partial ^2 x} - \mu_0 \epsilon_0 \frac{\partial ^2 u_h (x,t)}{\partial^2 t} \neq 0 
 	\end{equation}
-	Der tatsächliche Fehler (also der Differenz  $e=u-u_h$) kann, im Gegensatz zum Residuum, nicht bestimmt werden, da die Funktion $u$ nicht bekannt ist. Das Residuum kann jedoch bestimmt werden und dieses gilt es zu minimieren. Gesucht ist nun also:
+	Der tatsÃ¤chliche Fehler (also der Differenz  $e=u-u_h$) kann, im Gegensatz zum Residuum, nicht bestimmt werden, da die Funktion $u$ nicht bekannt ist. Das Residuum kann jedoch bestimmt werden und dieses gilt es zu minimieren. Gesucht ist nun also:
 	\begin{equation}
 		\min{\mathbf{r}} = \min{\mathbf{f}-\mathbf{A}\mathbf{u}_h} =  0  \tag{hoffentlich}
 	\end{equation}
-	Bisher war es die Aufgabe die Funktion $u_h$ zu finden ($A$ und $f$ sind ja bekannt), welche die Residuuen verschwinden lässt. Wenn $u_h$
-	Dazu wählen wir für die schwache Formulierung eine bekannte Gewichtsfunktion $w(x)$ und multiplizieren damit unsere Gleichung (\textit{Methode der gewichteten Residuuen}). Anschließend integrieren wir über das gesamte Gebiet $\Omega$ (was in unserem eindimensionalen Fall dem Intervall $[a,b]$ entspricht). Damit ergibt sich: 
+	Bisher war es die Aufgabe die Funktion $u_h$ zu finden ($A$ und $f$ sind ja bekannt), welche die Residuuen verschwinden lÃ¤sst. Wenn $u_h$
+	Dazu wÃ¤hlen wir fÃ¼r die schwache Formulierung eine bekannte Gewichtsfunktion $w(x)$ und multiplizieren damit unsere Gleichung (\textit{Methode der gewichteten Residuuen}). AnschlieÃŸend integrieren wir Ã¼ber das gesamte Gebiet $\Omega$ (was in unserem eindimensionalen Fall dem Intervall $[a,b]$ entspricht). Damit ergibt sich: 
 	\begin{align}
 	\int_{\Omega} r(x)w(x) dx = 0 \\
 	\int_{a}^{b} u_h''(x,t) w(x) dx - \mu_0 \epsilon_0 \int_{a}^{b}\frac{\partial ^2 }{\partial t^2}u_h (x,t)w(x) dx =0 
 	\label{weak-form}
 	\end{align}
-	Mit der verallgemeinerten Ableitung der Distributionen in $H$ (dem Sobolev-Raum, welcher Funktionen, für die eine verallgemeinerte Ableitung existiert umfasst):
+	Mit der verallgemeinerten Ableitung der Distributionen in $H$ (dem Sobolev-Raum, welcher Funktionen, fÃ¼r die eine verallgemeinerte Ableitung existiert umfasst):
 	\begin{equation}
 		\int_{a}^{b} u_h''(x) w(x) dx = -\int_{a}^{b} u_h'(x) w'(x) dx + u_h'(x)w(x) \vert_a^b 
 		\label{distribution-differential}
 	\end{equation}
-	An $x=a$ (allgemeiner $\Gamma_D = \{a\}$) liegt eine Dirichlet'sche Randbedingung vor, was so viel bedeutet wie das $u(a,t)=\text{const}$ ist, damit muss die Weg-Ableitung $u'(a,t)$ verschwinden. Generell gilt hier, dass durch das Einsetzen der Ansatzfunktionen N Gleichungen erzeugt werden. Da der wert von $u$ an der Stelle $\Gamma_D = \{a\}$ allerdings bereits bekannt ist, wird diese Gleichung nicht benötigt damit kann $w(a)=0$ gewählt werden. Außerdem ist in unserem konkreten Fall noch eine Cauchy'sche Randbedingung an $\Gamma_C = \{b\}$ vorgegeben: 
+	An $x=a$ (allgemeiner $\Gamma_D = \{a\}$) liegt eine Dirichlet'sche Randbedingung vor, was so viel bedeutet wie das $u(a,t)=\text{const}$ ist, damit muss die Weg-Ableitung $u'(a,t)$ verschwinden. Generell gilt hier, dass durch das Einsetzen der Ansatzfunktionen N Gleichungen erzeugt werden. Da der wert von $u$ an der Stelle $\Gamma_D = \{a\}$ allerdings bereits bekannt ist, wird diese Gleichung nicht benÃ¶tigt damit kann $w(a)=0$ gewÃ¤hlt werden. AuÃŸerdem ist in unserem konkreten Fall noch eine Cauchy'sche Randbedingung an $\Gamma_C = \{b\}$ vorgegeben: 
 	\[u'(b,t)=u_x(b,t) = \sqrt{\mu_0 \epsilon_0} u_t(b,t) ~~~~ \forall t \in  [0,t_0]\] daraus folgt also
 	\begin{equation}
 		u'(x,t)w(x) \vert_a^b = \sqrt{\mu_0 \epsilon_0} u_t (b,t) w(b) - \underbrace{u'(a,t)w(a)}_{=0}
 	\end{equation}
 	
 	\subsection{Festlegen des Intervalls}
-	Bei der Methode der finiten Elemente wird eine stetige Funktion auf $N$ Teilintervalle (Elemente) zerlegt. Dazu werden Funktionswerte an Knotenpunkten berechnet und diese mit auf kleine Intervalle beschränkten Funktionen multipliziert. Für das Intervall $x = \{a,...,b\}$ kann die Zerlegung folgendermaßen aussehen:
+	Bei der Methode der finiten Elemente wird eine stetige Funktion auf $N$ Teilintervalle (Elemente) zerlegt. Dazu werden Funktionswerte an Knotenpunkten berechnet und diese mit auf kleine Intervalle beschrÃ¤nkten Funktionen multipliziert. FÃ¼r das Intervall $x = \{a,...,b\}$ kann die Zerlegung folgendermaÃŸen aussehen:
 	\begin{equation}
 	x_i = a + i h
 	\end{equation}
-	wobei die Schrittweite $h=\frac{b-a}{N}$ ist. Im Prinzip kann diese Zerlegung aber beliebig gewählt werden.
+	wobei die Schrittweite $h=\frac{b-a}{N}$ ist. Im Prinzip kann diese Zerlegung aber beliebig gewÃ¤hlt werden.
 	\subsection{Ansatzfunktion}
-	Für die Funktion $u$ wird eine Interpolation $u_h$ folgender Gestalt gewählt:
+	FÃ¼r die Funktion $u$ wird eine Interpolation $u_h$ folgender Gestalt gewÃ¤hlt:
 	\begin{equation}
 	u \approx u_h = \sum_{i = 0}^{N} u_i  p_i(x)
 	\end{equation}
-	Dies entspricht einer Summe von Ansatzfunktion gewichtet mit noch zu bestimmenden konstanten Faktoren $u_i$. Diese Ansatzfunktion können verschiedene Gestalten haben, sollten jedoch die Eigenschaft aufweisen einen kompakten Träger zu besitzen, d.h. $p_i(x) = 0$ für alle $x > a+ih$ und $x < a-ih$. Zwischen zwei Knotenpunkten ist der Wert der Funktion nicht bekannt und muss entsprechend interpoliert werden und da sich zwischen den Kontenpunkten mehrere Ansatzfunktionen i.A. überlagern, sollte darauf geachtet werden, dass die Summe immer gleich 1 ist, also
+	Dies entspricht einer Summe von Ansatzfunktion gewichtet mit noch zu bestimmenden konstanten Faktoren $u_i$. Diese Ansatzfunktion kÃ¶nnen verschiedene Gestalten haben, sollten jedoch die Eigenschaft aufweisen einen kompakten TrÃ¤ger zu besitzen, d.h. $p_i(x) = 0$ fÃ¼r alle $x > a+ih$ und $x < a-ih$. Zwischen zwei Knotenpunkten ist der Wert der Funktion nicht bekannt und muss entsprechend interpoliert werden und da sich zwischen den Kontenpunkten mehrere Ansatzfunktionen i.A. Ã¼berlagern, sollte darauf geachtet werden, dass die Summe immer gleich 1 ist, also
 	\begin{equation}
 	p(x) = \sum_{i=0}^{N} p_i(x) = 1 ~~\forall x \in [a,b] 
 	\end{equation} 
-	Da die Koeffizienten $u_i$ nun konstante Faktoren sind, wird die (Weg-)Ableitung auf $p(x)$) übertragen. Das bedeutet:
+	Da die Koeffizienten $u_i$ nun konstante Faktoren sind, wird die (Weg-)Ableitung auf $p(x)$) Ã¼bertragen. Das bedeutet:
 	\begin{equation}
 	u_h'(x,t) = \sum_{i = 0}^{N} u_i  p_i'(x)
 	\end{equation}
@@ -99,7 +99,7 @@
 %	A(\sum_{i = 0}^{N} u_i  p_i(x))-f(x,t)  \overset{!}{=} 
 %	 0
 %	\end{equation}
-	In diesem Beispiel wird als Ansatzfunktionen verschobene Dreckeisfunktionen ('Hutfunktionen') verwendet. Selbstverständlich muss bei der Auswahl darauf geachtet werden, dass die gewählte Ansatzfunktion hinreichend oft differenzierbar ist.
+	In diesem Beispiel wird als Ansatzfunktionen verschobene Dreckeisfunktionen ('Hutfunktionen') verwendet. SelbstverstÃ¤ndlich muss bei der Auswahl darauf geachtet werden, dass die gewÃ¤hlte Ansatzfunktion hinreichend oft differenzierbar ist.
 
 	\begin{figure}
 		\centering
@@ -110,13 +110,13 @@
 
 
 	
-	Setzen wir dies nun in die Herleitung der schwachen Formulierung \ref{weak-form} ein, erhalten wir mit etwas umformen und unter Verwendung der verallgemeinerten Ableitung aus Formel \ref{distribution-differential}. Da sich unser Intervall zeitlich nicht ändert, darf die Zeit-Ableitung vor das Integral gezogen werden.
+	Setzen wir dies nun in die Herleitung der schwachen Formulierung \ref{weak-form} ein, erhalten wir mit etwas umformen und unter Verwendung der verallgemeinerten Ableitung aus Formel \ref{distribution-differential}. Da sich unser Intervall zeitlich nicht Ã¤ndert, darf die Zeit-Ableitung vor das Integral gezogen werden.
 	\begin{equation}
 	\sum_{i = 0}^{N} u_i   \int_{a}^{b} p_i'(x) w'(x) dx - 
 	\mu_0 \epsilon_0 \frac{\partial ^2 }{\partial t^2} \sum_{i = 0}^{N} u_i \int_{a}^{b}p_i(x)w(x) dx = 0
 	\label{weak-form2}
 	\end{equation}
-	Hier gelten noch $u_1,u_2,...u_N$, also $N$ Unbekannte Koeffizienten, zu finden. Für $N$ unbekannte Koeffizienten werden bekanntlich $N$ unabhängige Gleichungen benötigt. Ein Weg diese zu erhalten ist über die Ansatzfunktion $v(x)$. Für diese Ansatzfunktion wird ebenfalls eine ähnliche Zerlegung wie für $p(x)$ festgelegt, sollte es sogar die selbe sein, handelt es sich um die \textit{Galerkin Methode}. Man setzt also
+	Hier gelten noch $u_1,u_2,...u_N$, also $N$ Unbekannte Koeffizienten, zu finden. FÃ¼r $N$ unbekannte Koeffizienten werden bekanntlich $N$ unabhÃ¤ngige Gleichungen benÃ¶tigt. Ein Weg diese zu erhalten ist Ã¼ber die Ansatzfunktion $v(x)$. FÃ¼r diese Ansatzfunktion wird ebenfalls eine Ã¤hnliche Zerlegung wie fÃ¼r $p(x)$ festgelegt, sollte es sogar die selbe sein, handelt es sich um die \textit{Galerkin Methode}. Man setzt also
 	\begin{equation}
 	w(x) = p(x) = \sum_{j = 0}^{N} p_j(x)
 	\end{equation}
@@ -130,7 +130,7 @@
 	\sum_{j = 0}^{N} \int_{a}^{b} p_i p_j dx
 	\end{equation}
 	
-	Da wir Hutfunktionen verwenden können, welche durch die Dreiecksfunktion $p_i = tri(\frac{x + ih}{h})$ beschrieben werden, können die Integrale gelöst werden:
+	Da wir Hutfunktionen verwenden kÃ¶nnen, welche durch die Dreiecksfunktion $p_i = tri(\frac{x + ih}{h})$ beschrieben werden, kÃ¶nnen die Integrale gelÃ¶st werden:
 	
 	\begin{equation}
 	\int_{a}^{b} p_ip_j dx = \begin{cases}
@@ -139,7 +139,7 @@
 	0\, ~~\text{sonst}
 	\end{cases}
 	\end{equation}
-	und für $p'_i p'_j$ gilt
+	und fÃ¼r $p'_i p'_j$ gilt
 	\begin{equation}
 	\int_{a}^{b} p_i' p_j' dx = \begin{cases}
 	\frac{2}{h}, ~~ j=i \\
@@ -147,11 +147,11 @@
 	0\, ~~\text{sonst}
 	\end{cases}
 	\end{equation}
-	Ausgenommen sind hier die Ergebnisse die direkt am Rand liegen. Bei $\Gamma_D = \{a\}$ ist der Wert von $u$ bereits bekannt, die Ansatzfunktion kann also ohne weiteres Null gesetzt werden. Bei $\Gamma_C = \{b\}$ ist nur der Wert der Ableitung von $u$ bekannt. Hier muss der Wert erst bestimmt werden. Bei Betrachtung der Situation am Rand sieht man, dass hier nur über die \textit{halbe} Ansatzfunktion integriert wird, also das auch genau halb so groß ist.
+	Ausgenommen sind hier die Ergebnisse die direkt am Rand liegen. Bei $\Gamma_D = \{a\}$ ist der Wert von $u$ bereits bekannt, die Ansatzfunktion kann also ohne weiteres Null gesetzt werden. Bei $\Gamma_C = \{b\}$ ist nur der Wert der Ableitung von $u$ bekannt. Hier muss der Wert erst bestimmt werden. Bei Betrachtung der Situation am Rand sieht man, dass hier nur Ã¼ber die \textit{halbe} Ansatzfunktion integriert wird, also das auch genau halb so groÃŸ ist.
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/hutfunktionen}
-		\caption{Überlagerte Hutfunktionen}
+		\caption{Ãœberlagerte Hutfunktionen}
 		\label{fig:hutfunktionen}
 	\end{figure}
 	
@@ -161,7 +161,7 @@
 	\mathbf{S}_h \mathbf{u}_h + \mathbf{C}_h \frac{\partial}{\partial t} \mathbf{u}_h + \mathbf{M}_h \frac{\partial ^2}{\partial t^2} \mathbf{u}_h = \mathbf{0}
 	\end{equation}
 	
-	folgendermaßen angeschrieben werden:
+	folgendermaÃŸen angeschrieben werden:
 	
 	\begin{align}
 	\begin{split}
@@ -230,8 +230,8 @@
 	\frac{\partial^2 u}{\partial t^2} \approx a (t_j)
 	\]
 	Diese sind eine Anlehnung an die Mechanik, wo die erste Ableitung des Weges nach der Zeit die Geschwindigkeit $v$, und die zweite Ableitung nach der Zeit die Beschleunigung $a$ bezeichnet.
-	Das Newmark-Verfahren beruht auf einer Taylor-Entwicklung für $u$ und $v$, wobei
-zweite Ableitungen durch Beschleunigungen zum Zeitpunkt $t_j$ und $t_{j+1}$ approximiert werden. Für den Zeitpunkt $t_{j+1} = tj + \Delta t$ ergibt sich das Gleichungssystem
+	Das Newmark-Verfahren beruht auf einer Taylor-Entwicklung fÃ¼r $u$ und $v$, wobei
+zweite Ableitungen durch Beschleunigungen zum Zeitpunkt $t_j$ und $t_{j+1}$ approximiert werden. FÃ¼r den Zeitpunkt $t_{j+1} = tj + \Delta t$ ergibt sich das Gleichungssystem
 	
 	\begin{equation}
 	\mathbf{Su}_{j+1} + 	\mathbf{Cv}_{j+1} +	\mathbf{Ma}_{j+1} = 	\mathbf{f}_{j+1}
@@ -250,20 +250,20 @@ zweite Ableitungen durch Beschleunigungen zum Zeitpunkt $t_j$ und $t_{j+1}$ appr
 	(\mathbf{S} + \gamma \Delta t	\mathbf{C} +	\mathbf{M})a_{j+1} = 	\mathbf{\tilde f}_{j+1}
 	\label{eq:newmark-final}
 	\end{equation}
-	wobei die Größen $u_j$, $v_j$ und $a_j$ in den Vektor $\mathbf{\tilde f}_{j+1}$ sind. Herleitung siehe Skriptum.
+	wobei die GrÃ¶ÃŸen $u_j$, $v_j$ und $a_j$ in den Vektor $\mathbf{\tilde f}_{j+1}$ sind. Herleitung siehe Skriptum.
 	
 	
 	\subsection{Implementierung in Matlab}
-	\lstinputlisting[language=matlab,style=myMatlabStyle,caption={Implementierung der FEM für ein eindimensionales Lösen der Wellengleichung}]{../Matlab/FEM.m}	
+	\lstinputlisting[language=matlab,style=myMatlabStyle,caption={Implementierung der FEM fÃ¼r ein eindimensionales LÃ¶sen der Wellengleichung}]{../Matlab/FEM.m}	
 	
 	
 	\subsection{Ergebnis}
 	
-	Die Methode der finiten Elemente in Kombination mit dem Newmark'schen Zeitschrittverfahren bringt sehr brauchbare Ergebnisse hervor. Jedoch neigt das Verfahren, trotz einhalten der Stabilitätsbedingung nach ausreichend vielen Zeitschritten
+	Die Methode der finiten Elemente in Kombination mit dem Newmark'schen Zeitschrittverfahren bringt sehr brauchbare Ergebnisse hervor. Jedoch neigt das Verfahren, trotz einhalten der StabilitÃ¤tsbedingung nach ausreichend vielen Zeitschritten
 	\begin{equation}
 		\Delta t < \frac{\Delta x^2}{v}
 	\end{equation}
-	 zur Instabilität.
+	 zur InstabilitÃ¤t.
 	
 	\begin{figure}[!h]
 		\centering
@@ -277,7 +277,7 @@ zweite Ableitungen durch Beschleunigungen zum Zeitpunkt $t_j$ und $t_{j+1}$ appr
 	\begin{enumerate}
 		\item Stelle das Gleichungssystem in der Form $Lu = f$ dar, wobei $L$ ein linearer Differentialoperator beliebiger Gestalt ist.
 		\item Ersetzte deine Funktion $u$ durch $u_h$, eine gewichtete Summe von Ansatzfunktionen, mit noch zu bestimmenden Gewichten.
-		\item Multipliziere die Gleichung mit einer Gewichtsfunktion $w$ und integriere über das gesamte Gebiet.
-		\item Für das Galerkin-Verfahren wähle die selbe Ansatzfunktionen für $u_h$ und $w$.
-		\item Löse die Integrale und stelle das Gleichungssystem in einer Matrix Schreibweise dar. Anschließend muss nur noch das lineare Gleichungssystem gelöst werden.
+		\item Multipliziere die Gleichung mit einer Gewichtsfunktion $w$ und integriere Ã¼ber das gesamte Gebiet.
+		\item FÃ¼r das Galerkin-Verfahren wÃ¤hle die selbe Ansatzfunktionen fÃ¼r $u_h$ und $w$.
+		\item LÃ¶se die Integrale und stelle das Gleichungssystem in einer Matrix Schreibweise dar. AnschlieÃŸend muss nur noch das lineare Gleichungssystem gelÃ¶st werden.
 	\end{enumerate}
