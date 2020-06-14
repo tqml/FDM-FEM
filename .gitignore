@@ -1,3 +1,4 @@
+# Class Ignore
 Abgabe/
 Abgabe.zip
 Unterlagen/
@@ -10,3 +11,28 @@ Doc/.texpadtmp/
 *.lot
 *.aux
 *.toc
+
+
+# Ignore Everything
+*
+
+
+
+# Except
+!README.md
+!LICENSE
+!.gitignore
+!*/
+
+# Source files
+!*.m
+!*.tex
+
+# Media files
+!.png
+!*.gif
+!*.avi
+!*.mov
+!*.mp4
+!*.md
+!*.pdf
