@@ -29,5 +29,5 @@ Increasing rounding (?) errors lead to instabilities for long FEM simulations.
 
 ## Useful Resouces
 
-* Numerik 18: Die Methode der Finiten Elemente (german): ![https://www.youtube.com/watch?v=2JgZGHUEJWE]
-* MIT: Computational Science & Engineering 1: ![https://itunes.apple.com/at/podcast/computational-science-and-engineering-i/id354869177?mt=2]
+* Numerik 18: Die Methode der Finiten Elemente (german): [Video on Youtube](https://www.youtube.com/watch?v=2JgZGHUEJWE)
+* MIT: Computational Science & Engineering 1: [Course on iTunes U](https://itunes.apple.com/at/podcast/computational-science-and-engineering-i/id354869177?mt=2)
